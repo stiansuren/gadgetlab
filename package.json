@@ -2,9 +2,9 @@
   "name": "gadgetlab",
   "version": "1.0.0",
   "description": "For de lærevillige",
-  "main": "app.js",
-  "start": "app.js",
+  "main": "server.js",
   "scripts": {
+    "start": "server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/stiansurenbekk/gadgetlab#readme",
   "dependencies": {
+    "ejs": "~1.0.0",
     "express": "^4.13.4"
   },
   "engines": {
