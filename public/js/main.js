@@ -58,14 +58,14 @@ var renderCard = function(card, cardOrder){
         var attachment = text;
         console.log(attachment.url);
         $('#' + cardOrder).prepend('<img src="' + attachment.url + '">');
-        if (cardOrder >= 7){
-          $('.grid').masonry({
-            itemSelector: '.grid-item',
-            columnWidth: '.grid-sizer',
-            percentPosition: true
-          });
-          console.log('last picture has loaded')
-        };
+        // if (cardOrder >= 7){
+        //   $('.grid').masonry({
+        //     itemSelector: '.grid-item',
+        //     columnWidth: '.grid-sizer',
+        //     percentPosition: true
+        //   });
+        //   console.log('last picture has loaded')
+        // };
     });
   };
 
