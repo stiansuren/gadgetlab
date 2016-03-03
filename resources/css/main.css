@@ -1,0 +1,80 @@
+body{
+	background-color: #252525;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 120px;
+    font-family: "Conduit ITC Light",Arial,sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+header {
+	background-color: #1a1a1a;
+    height: 60px;
+	margin: auto;
+    width: 100%;
+    padding: 0 100px 0 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    font-size: 18px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.big-header {
+    font-size: 27px;
+    color: #fff9ae;
+    text-decoration: none;
+    padding-top: 1%;
+}
+
+section {
+	color: #c6c8ca;
+}
+
+.grid {
+    max-width: 1200px;
+}
+
+.grid-sizer,
+.grid-item { 
+    width: 24%;
+}
+
+.grid-item { 
+    float: left;
+    background-color: #1a1a1a;
+    padding: 0.5%;
+    margin: 0.5%;
+}
+
+.grid-item--width2 { width: 50%; }
+
+.grid-item img {
+    display: block;
+    width: 100%;
+    max-height: 200px;
+    object-fit: none; /* Do not scale the image */
+    object-position: center;
+}
+
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+
+.button{
+	text-decoration: none;
+}
+
+@font-face {
+  font-family: "Conduit ITC Light";
+  src: url("/Gadgetlab/css/Conduit_ITC_Light.eot");
+}
