@@ -6,7 +6,7 @@ const PORT=8080;
 
 //We need a function which handles requests and send response
 function handleRequest(request, response){
-    response.end('It Works!! Path Hit: ' + request.url);
+    response.end('Halllo');
 }
 
 //Create a server

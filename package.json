@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "For de lærevillige",
   "main": "app.js",
+  "start": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/stiansurenbekk/gadgetlab/issues"
   },
-  "homepage": "https://github.com/stiansurenbekk/gadgetlab#readme"
+  "homepage": "https://github.com/stiansurenbekk/gadgetlab#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "engines": {
+    "node": "5.6.0"
+  }
 }
