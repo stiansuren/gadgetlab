@@ -4,8 +4,13 @@ var actionId = '56a35a26947425b497d38c92';
 
 
 $(window).load(function(){
-  console.log('Her!')
+  // console.log(trelloObjects);
 
-  
 });
+
+function consoleLogTrello (trelloObject) {
+  console.log (trelloObject);
+}
+
+exports.consoleLogTrello = consoleLogTrello();
 
