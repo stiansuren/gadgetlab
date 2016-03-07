@@ -16,6 +16,7 @@ $(window).load(function(){
 
 });
 
+// Render the Trello cards
 function renderCard (card, order) {
   $('#cards').append('<div class="card" id="' + order + '"></div>');
   $('#' + order).append('<h3 class="card card-header">' + card.name + '</h3>');
