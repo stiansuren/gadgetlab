@@ -28,7 +28,8 @@ header
     margin: 15px auto 0 auto;
 }
 
-.home-button{
+.home-button
+{
     cursor: pointer;
     text-decoration: none;
     position: relative;
