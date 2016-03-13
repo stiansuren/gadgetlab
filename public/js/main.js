@@ -9,12 +9,9 @@ $(window).load(function(){
   })
 
   var loanPerson = {};
-  loanPerson.name = "Aslak";
-  loanPerson.state = "complete";
-  loanPerson.pos = "bottom";
-
-  console.log (loanPerson);
-  console.log(JSON.stringify(loanPerson));
+  loanPerson.name = "Rune";
+  loanPerson.checked = "true";
+  // loanPerson.pos = "bottom";
 
   // JSON.stringify(loanPerson);
 
@@ -23,14 +20,31 @@ $(window).load(function(){
   //     console.log(data);
   //   });
 
+  var newCard = {};
+  newCard.name = "Enda et kort";
+  newCard.due = "null";
+
+  var cardOne = {"name":"Sjekk ut dette", "due":"null"};
+
   jQuery.ajax ({
      url: '/postName',
      type: "POST",
      data: JSON.stringify(loanPerson),
-     dataType: "json",
+     // dataType: "json",
      contentType: "application/json; charset=utf-8",
      success: function(data){
-         console.log(data);
+         console.log('suksess');
+     }
+  });
+
+  jQuery.ajax ({
+     url: '/postCard',
+     type: "POST",
+     data: JSON.stringify(cardOne),
+     // dataType: "json",
+     contentType: "application/json; charset=utf-8",
+     success: function(data){
+         console.log('suksess');
      }
   });
 
