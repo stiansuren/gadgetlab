@@ -68,9 +68,9 @@ app.get('/currentLoaner/:id', function(req, res) {
 });
 
 // Post an element to a checklist on a card in Trello
-app.post('/postName', function(req, res) {
+app.post('/postName/:id', function(req, res) {
 
-	var checkList = trelloBaseURL + '/1/checklists/56def8fa103d4644bb226f4e/checkItems';
+	var checkList = trelloBaseURL + '/1/checklists/' + req.params.id + '/checkItems';
 
 	request
 	   .post(checkList)

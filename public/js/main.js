@@ -1,3 +1,5 @@
+var cardArray = [];
+
 // Run on load
 $(window).load(function(){
 
@@ -5,7 +7,22 @@ $(window).load(function(){
   $.get('/trelloCards', function(data){
     for (object in data){
       renderCard (data[object], object);
+      cardArray.push(data[object]);
     }
+
+    // Add click listeners
+    $('.btn').click(function(){
+      var elementId = $(this).closest('div').attr('id');
+      var checklistId = cardArray[elementId].idChecklists[0];  
+      console.log(checklistId);
+      if($('#js-bekreft-lån').length){
+        $('#js-bekreft-lån').parent().append('<button class="btn" type="submit">Låne ' + cardArray[$('#js-bekreft-lån').parent().attr('id')].name + '</button>');
+        $('#js-bekreft-lån').detach();
+
+      };
+      openBekreftLån(elementId, checklistId);  
+    });
+
   })
 
 });
@@ -41,15 +58,26 @@ function renderCard (card, order) {
       $('#' + order).append('<h4>Lånes av ' + currentLoaner + '</h4><button class="btn venteliste" type="submit">Venteliste</button>');
     };
   }
+
 };
 
-function loanGadget (input){
+function openBekreftLån(elementId, checklistId){
+  $('#' + elementId).children('button').detach();
+  $('#' + elementId).append('<form id="js-bekreft-lån"><input type=text placeholder="Fullt navn"><input id="js-submit" type=submit value="Yes, jeg er klar"></form>');
+
+  $('#js-submit').click(function(){ 
+    console.log($('input:first').val()); 
+    loanGadget($('input:first').val(), checklistId);
+  });
+}
+
+function loanGadget (input, checklistId){
   var loanPerson = {};
   loanPerson.name = input;
-  loanPerson.checked = "true";
+  loanPerson.checked = "false";
 
   jQuery.ajax ({
-       url: '/postName',
+       url: '/postName/' + checklistId,
        type: "POST",
        data: JSON.stringify(loanPerson),
        contentType: "application/json; charset=utf-8",
