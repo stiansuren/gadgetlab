@@ -18,7 +18,6 @@ class App extends Component {
 				this.setState({
 					data 
 				});
-				console.log('State of data is ', data);
 			})
 	}
 
