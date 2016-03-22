@@ -3,6 +3,8 @@ var app = express();
 var request = require('superagent');
 var bodyParser = require('body-parser');
 
+import {getKey} from './trelloKeys';
+
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
 var port = process.env.PORT || 8080;
@@ -32,12 +34,8 @@ app.listen(port, function() {
 // Base URL to be added to every HTTP-request
 var trelloBaseURL = 'https://api.trello.com';
 
-const trelloSecret = 'ba1591534f6e12cc443b379ce1ff4519b4a882347b3cf0a38f9fcc9c4056237d';
-const trelloKey = 'd121cf6f29cf938fd16890234a8d03fa';
-const trelloToken = 'd142d27de0242d5245532fd416c07f84843ce3de64fe75d8d245776fbaa40508';
-
 //Get permission to access my Trello account
-var trelloHeader = {'oauth_consumer_key': trelloKey, 'oauth_token': trelloToken, 'secret': trelloSecret};
+var trelloHeader = {'oauth_consumer_key': getKey('Key'), 'oauth_token': getKey('Token'), 'secret': getKey('Secret')};
 
 // Get all cards the Tilgjengelig list from Trello
 app.get('/trelloCards', function(req, res) {
