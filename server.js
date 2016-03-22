@@ -63,6 +63,7 @@ app.get('/currentLoaner/:id', function(req, res) {
 	   .set('Content-Type', 'application/json')
 	   .query(trelloHeader)
 	   .end(function(_err, _res){
+	   		console.log(_res.body);
 			res.json(_res.body);
    		});
 });
