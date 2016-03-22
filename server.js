@@ -2,7 +2,6 @@ var express = require('express');
 var app = express();
 var request = require('superagent');
 var bodyParser = require('body-parser');
-var keys = require('./trelloKeys').keys;
 
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
