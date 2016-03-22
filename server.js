@@ -34,7 +34,7 @@ app.listen(port, function() {
 var trelloBaseURL = 'https://api.trello.com';
 
 //Get permission to access my Trello account
-var trelloHeader = {'oauth_consumer_key': keys.trelloKey, 'oauth_token': keys.trelloToken, 'secret': keys.trelloSecret};
+var trelloHeader = {'oauth_consumer_key': TRELLO_KEY, 'oauth_token': TRELLO_TOKEN, 'secret': TRELLO_SECRET};
 
 // Get all cards the Tilgjengelig list from Trello
 app.get('/trelloCards', function(req, res) {
