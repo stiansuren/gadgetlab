@@ -27,3 +27,5 @@ export function postNewLoaner(id){
 		return console.log(data)
 	})
 }
+
+

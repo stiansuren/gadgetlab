@@ -23,11 +23,14 @@ class App extends Component {
 
 	render(){
 		return (
-			<div>{this.state.data.map(gadget => {
-				return (
-					<Gadget key={gadget.id} gadget={gadget}/> 
-				)
-			})}</div>
+			<div>
+				<h3>{this.state.data.length} Gadgets</h3>
+				{this.state.data.map(gadget => {
+					return (
+						<Gadget key={gadget.id} gadget={gadget}/> 
+					)
+				})}
+			</div>
 		)
 	}
 }
