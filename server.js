@@ -3,6 +3,9 @@ var app = express();
 var request = require('superagent');
 var bodyParser = require('body-parser');
 
+// Only for local development
+var trello = require('./trelloKeys');
+
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
 var port = process.env.PORT || 8080;
@@ -33,7 +36,7 @@ app.listen(port, function() {
 var trelloBaseURL = 'https://api.trello.com';
 
 //Get permission to access my Trello account
-var trelloHeader = {'oauth_consumer_key': process.env.TRELLO_KEY, 'oauth_token': process.env.TRELLO_TOKEN, 'secret': process.env.TRELLO_SECRET};
+var trelloHeader = {'oauth_consumer_key': process.env.TRELLO_KEY || trello.keys.trelloKey, 'oauth_token': process.env.TRELLO_TOKEN  || trello.keys.trelloToken, 'secret': process.env.TRELLO_SECRET  || trello.keys.trelloSecret};
 
 // Get all cards the Tilgjengelig list from Trello
 app.get('/trelloCards', function(req, res) {
@@ -59,7 +62,6 @@ app.get('/currentLoaner/:id', function(req, res) {
 	   .set('Content-Type', 'application/json')
 	   .query(trelloHeader)
 	   .end(function(_err, _res){
-	   		console.log(_res.body);
 			res.json(_res.body);
    		});
 });
@@ -71,11 +73,11 @@ app.post('/postName/:id', function(req, res) {
 
 	request
 	   .post(checkList)
-	   .set('Content-Type', 'application/json')
-	   .send(req.body)
+	   .send({name:'Stinsen'})
 	   .query(trelloHeader)
 	   .end(function(_err, _res){
-			res.json(_res.body);
+			// res.json(_res.body);
+			console.log('Response is ' + _res.body);
    		});
    	
 });

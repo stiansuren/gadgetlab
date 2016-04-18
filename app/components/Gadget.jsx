@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {render} from 'react-dom';
 import BorrowButton from './BorrowButton.jsx';
 import {fetchCurrentLoanerList} from './../helpers';
+import {postNewLoaner} from './../helpers';
+import InputForm from './InputForm.jsx';
 
 class Gadget extends Component {
 	constructor(props) {
@@ -9,7 +11,8 @@ class Gadget extends Component {
 
 		this.state = {
 			gadget: [],
-			loaner: ""
+			loaner: "",
+			clicked: false
 		}
 	}
 
@@ -23,11 +26,24 @@ class Gadget extends Component {
 	}
 
 	shouldComponentUpdate(nextProps, nextState) {
-		return nextState.loaner !== this.state.loaner;
+		return nextState.loaner !== this.state.loaner || this.state.clicked !== nextState.clicked;
+	}
+
+	confirmLoan(event){
+		console.log(this.props.gadget.id);
+		postNewLoaner(this.props.gadget.id);
+	}
+
+	openInput(){
+		this.setState({
+			clicked: true
+		});
+
+		console.log(this.state.clicked);
 	}
 
 	renderAvailable(name){
-		return <BorrowButton key={name} name={name}/>
+		return this.state.clicked ? <InputForm confirmLoan={() => this.confirmLoan()} /> : <BorrowButton openInput={() => this.openInput()} key={name} name={name}/>
 	}
 
 	renderBorrowed(){

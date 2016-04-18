@@ -3,7 +3,11 @@ import {render} from 'react-dom';
 
 class BorrowButton extends Component {
 	render(){
-		return <button className="btn">Lån {this.props.name}</button>
+		return (
+			<button onClick={this.props.openInput} className="btn" id={this.props.name}>
+				Lån {this.props.name}
+			</button>
+		)
 	}
 }
 
