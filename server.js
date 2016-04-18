@@ -4,7 +4,9 @@ var request = require('superagent');
 var bodyParser = require('body-parser');
 
 // Only for local development
-var trello = require('./trelloKeys');
+if (process.env.TRELLO_KEY == null){
+	var trello = require('./trelloKeys');
+};
 
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
