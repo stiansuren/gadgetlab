@@ -19,6 +19,7 @@ class Gadget extends Component {
 	fetchLoaner() {
 		fetchCurrentLoanerList(this.props.gadget.idChecklists[0])
 			.then(loaner => {
+				console.log(loaner);
 				this.setState({
 					loaner
 				});

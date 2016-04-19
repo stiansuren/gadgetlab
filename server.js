@@ -71,14 +71,25 @@ app.get('/currentLoaner/:id', function(req, res) {
 // Post an element to a checklist on a card in Trello
 app.post('/postName/:id', function(req, res) {
 
-	var checkList = trelloBaseURL + '/1/checklists/' + req.params.id + '/checkItems';
+	// var checkList = trelloBaseURL + '/1/checklists/' + req.params.id + '/checkItems';
+	var checkList = trelloBaseURL + '/1/checklists/' + 	'554893f3ec75cd43c2bab97c' + '/checkItems';
+
+	var person = [];
+	person.name = 'Stini';
+
+	console.log(checkList);
+	console.log(person);
+
+	var personJSON = JSON.stringify(person);
+	console.log(personJSON);
+
 
 	request
 	   .post(checkList)
-	   .send({name:'Stinsen'})
+	   .send({'name': 'Stian'})
 	   .query(trelloHeader)
 	   .end(function(_err, _res){
-			// res.json(_res.body);
+			res.json(_res.body);
 			console.log('Response is ' + _res.body);
    		});
    	

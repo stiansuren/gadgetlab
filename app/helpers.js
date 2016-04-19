@@ -14,7 +14,7 @@ export function fetchCurrentLoanerList(id) {
 		return data.json();
 	})
 	.then(currentLoanerList => {
-		return currentLoanerList.checkItems[0].name
+		return currentLoanerList.checkItems[currentLoanerList.checkItems.length-1].name
 	})
 }
 

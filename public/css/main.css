@@ -66,6 +66,13 @@ header
     float: left;
     height: 160px;
     margin-right: 10px;
+    position: relative;
+}
+
+h4:last-child, button:last-child
+{
+    position: absolute;
+    bottom: 0;
 }
 
 .btn
