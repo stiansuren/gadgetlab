@@ -1,4 +1,4 @@
-import 'node-fetch';
+import 'isomorphic-fetch';
 
 export function getCards(){
 	return fetch('/trelloCards')
