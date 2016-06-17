@@ -1,9 +1,21 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom';
 import {getCards} from './helpers';
-import Gadget from './components/Gadget.jsx'
+import Gadget from './components/Gadget.jsx';
+import Retningslinjer from './components/Retningslinjer.jsx';
+import { Router, Route, Link, IndexRoute, hashHistory } from 'react-router';
 
 class App extends Component {
+	render(){
+		return(
+			<div>
+				{this.props.children}
+			</div>
+		)
+	}
+}
+
+class Gadgets extends Component {
 	constructor(props){
 		super(props);
 
@@ -20,22 +32,29 @@ class App extends Component {
 				});
 			})
 	}
-
+	
 	render(){
-		return (
+		return(
 			<div>
+				<button className="nav" ><h2><Link to="/retningslinjer">Retningslinjer</Link></h2></button>
 				<h3>{this.state.data.length} Gadgets</h3>
-				{this.state.data.map(gadget => {
-					return (
-						<Gadget key={gadget.id} gadget={gadget}/> 
-					)
-				})}
+					{this.state.data.map(gadget => {
+						return (
+							<Gadget key={gadget.id} gadget={gadget}/> 
+						)
+					})}
 			</div>
 		)
 	}
+
 }
 
-render(
-	<App/>,
-	document.getElementById('app')
-);
+
+render((
+	<Router history={hashHistory}>
+		<Route path="/" component={App}>
+			<IndexRoute component={Gadgets} />
+			<Route path="retningslinjer" component={Retningslinjer} />
+		</Route>
+	</Router>
+), document.getElementById('app'))

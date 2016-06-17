@@ -57,6 +57,12 @@ header
     margin: 0 0 25px 0;
 }
 
+.nav
+{   
+    text-align: center;
+    text-decoration: underline;   
+}
+
 .gadget 
 {
     background-color: #1a1a1a;

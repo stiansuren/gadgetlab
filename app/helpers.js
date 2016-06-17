@@ -1,3 +1,5 @@
+import 'node-fetch';
+
 export function getCards(){
 	return fetch('/trelloCards')
 	.then(data => {
