@@ -36,7 +36,7 @@ class Gadgets extends Component {
 	render(){
 		return(
 			<div>
-				<button className="nav" ><h2><Link to="/retningslinjer">Retningslinjer</Link></h2></button>
+				<button><h2><Link to="/retningslinjer">Retningslinjer</Link></h2></button>
 				<h3>{this.state.data.length} Gadgets</h3>
 					{this.state.data.map(gadget => {
 						return (

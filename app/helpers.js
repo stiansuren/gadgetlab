@@ -31,3 +31,13 @@ export function postNewLoaner(id){
 }
 
 
+export function getRetningslinjer(){
+	return fetch('/getRetningslinjer')
+	.then(data => {
+		return data.json();
+	})
+	.then(jsonData => {
+		return jsonData;
+	})
+}
+

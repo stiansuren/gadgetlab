@@ -48,7 +48,7 @@ header
     display: none;
 }
 
-.home-button p, :visited
+.home-button p
 {
     font-size: 27px;
     color: #36BDB2;
@@ -81,7 +81,15 @@ h4:last-child, button:last-child
     bottom: 0;
 }
 
-.btn
+h2 a
+{
+    text-decoration: none;
+    color: #ebebeb;
+    font-weight: 500;
+    font-variant: 
+}
+
+.btn, button
 {
     display: inline-block;
     padding: 9px 30px 8px 30px;
@@ -97,12 +105,21 @@ h4:last-child, button:last-child
     transition: background 0.2s ease-out, border 0.2s ease-out;
 }
 
+button 
+{
+    font-family: "Conduit ITC Light",Arial,sans-serif;
+}
+
 .btn:hover, .btn:focus
 {
     background: #FD5158;
     border-color: #FD5158;
 }
 
+.info-page p
+{
+    width: 500px;
+}
 
 section 
 {

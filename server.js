@@ -95,6 +95,20 @@ app.post('/postName/:id', function(req, res) {
    	
 });
 
+app.get('/getRetningslinjer', function(req,res){
+
+	var card = trelloBaseURL + '/1/card/' + '576bf891e161d28f4efd7d1a';
+
+	request
+		.get(card)
+		.set('Content-Type', 'application/json')
+		.query(trelloHeader)
+		.end(function(_err, _res){
+			res.json(_res.body);
+			console.log('Response is ' + _res.body);
+		});
+});
+
 
 
 
