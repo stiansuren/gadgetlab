@@ -25,7 +25,7 @@ class Retningslinjer extends Component {
 	render(){
 		return (
 			<div className="info-page">
-				<button className='btn'><h2><Link to="/">Gadgets</Link></h2></button>
+				<Link to="/" className='btn'><h2>Gadgets</h2></Link>
 				<h3>Retningslinjer</h3>
 				<p>{this.state.data.desc}</p>
 			</div>
