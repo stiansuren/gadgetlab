@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {render} from 'react-dom';
 import { Link } from 'react-router';
 import {getRetningslinjer} from './../helpers';
+import ReactMarkdown from 'react-markdown';
 
 class Retningslinjer extends Component {
 	constructor(props){
@@ -27,7 +28,7 @@ class Retningslinjer extends Component {
 			<div className="info-page">
 				<Link to="/" className='btn'><h2>Gadgets</h2></Link>
 				<h3>Retningslinjer</h3>
-				<p>{this.state.data.desc}</p>
+				<ReactMarkdown source = {this.state.data.desc} />
 			</div>
 		)
 	}
