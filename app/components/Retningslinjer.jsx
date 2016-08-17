@@ -25,9 +25,9 @@ class Retningslinjer extends Component {
 
 	render(){
 		return (
-			<div className="info-page">
-				<Link to="/" className='btn'><h2>Gadgets</h2></Link>
-				<h3>Retningslinjer</h3>
+			<div>
+				<Link to="/" className='btn'><h2>Se gadgets</h2></Link>
+				<h4>Retningslinjer</h4>
 				<ReactMarkdown source = {this.state.data.desc} />
 			</div>
 		)

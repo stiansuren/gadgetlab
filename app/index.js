@@ -37,7 +37,7 @@ class Gadgets extends Component {
 		return(
 			<div>
 				<Link to="/retningslinjer" className='btn'><h2>Se retningslinjene</h2></Link>
-				<h3>{this.state.data.length} Gadgets</h3>
+				<h4>{this.state.data.length} Gadgets</h4>
 					{this.state.data.map(gadget => {
 						return (
 							<Gadget key={gadget.id} gadget={gadget}/> 
