@@ -19,7 +19,7 @@ h2 {font-size: 1.5em;}
 
 h3{
     color: #FFF9AE;
-    margin-top: 0px;
+    margin-top: 0.3em;
 }
 
 h4 {margin-bottom: 2%;}
@@ -40,10 +40,6 @@ header
     color: #36BDB2;
     font-weight: 100;
     float: left;
-
-    @media (min-width: 800px){
-        color: black;
-    }
 }
 
 main 
@@ -67,34 +63,18 @@ main
     box-sizing: border-box; 
 }
 
-@media screen and (min-width:890px){
-    .btn {
-        background: transparent;
-        border: 1px solid #c6c8ca;
-        cursor: pointer;
-        -webkit-transition: background 0.2s ease-out, border 0.2s ease-out;
-        transition: background 0.2s ease-out, border 0.2s ease-out;
-    }
-
-    .btn:hover, .btn:focus
-    {
-        background: #FD5158;
-        border-color: #FD5158;
-    }
-}
-
 .space
 {
-    margin-bottom: 8%;
+    margin-bottom: 2em;
 }
 
 .gadget 
 {
 
     background-color: #1a1a1a;
-    padding: 2% 1.5%;
+    padding: 0.4em 0.4em;
     margin-bottom: 2%;
-    width: 100%;
+    width: 96%;
 
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -102,10 +82,91 @@ main
 }
 
 .gadget h4 {margin-bottom:0;}
-.gadget btn {width: 100%;}
+
+.gadget .btn {
+        width: 100%;
+    }
 
 .btn h2, .btn h4 {
     margin: auto
+}
+
+
+@media screen and (min-width: 600px){
+    .btn {
+        background: transparent;
+        border: 1px solid #c6c8ca;
+        cursor: pointer;
+        padding: 1.5em 0;
+        -webkit-transition: background 0.2s ease-out, border 0.2s ease-out;
+        transition: background 0.2s ease-out, border 0.2s ease-out;
+    }
+
+    .gadget .btn {
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        width: 93%;
+    }
+
+    .btn:hover, .btn:focus
+    {
+        background: #FD5158;
+        border-color: #FD5158;
+    }
+
+    .gadget {
+        position: relative;
+        float: left;
+        width: 47%;
+        height: 220px;
+        margin-right: 2%;
+        padding: 10px;
+    }
+    
+    @media screen and (max-width: 1000px){
+    .gadget :nth-child(2){
+        margin-right: 0;
+    }
+}
+
+
+}
+
+@media screen and (min-width: 1000px){
+    .btn {
+        padding: 1.5em 0;
+    }
+
+    .btn {width: 31%;}
+
+    .gadget .btn {
+        width: 95%;
+    }
+
+    .gadget {
+        width: 31%;
+        height: 195px;
+        margin-right: 1%;
+        margin-bottom: 1%;
+        padding: 10px;
+    }
+
+    .gadget :nth-child(3){
+        margin-right: 0;
+    }
+
+    main 
+    {
+        width: 100%;
+        margin: auto;
+        max-width: 1300px;
+    }
+
+    .home-container {
+        max-width: 1300px;
+        margin: auto;
+    }
 }
 
 @font-face 
