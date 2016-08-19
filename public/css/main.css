@@ -31,6 +31,7 @@ header
     display: inline-block;
     top: 0;
     left: 0;
+    padding: .5% 2%;
 }
 
 .home-button
@@ -165,6 +166,10 @@ main
     .home-container {
         max-width: 1300px;
         margin: auto;
+    }
+
+    header{
+        padding: 0;
     }
 }
 
