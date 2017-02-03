@@ -43,7 +43,6 @@ class Gadget extends Component {
 	}
 
 	renderAvailable(name){
-		// return <h4>Ledig</h4>
 		return this.state.clicked ? <InputForm confirmLoan={() => this.confirmLoan()} /> : <BorrowButton openInput={() => this.openInput()} key={name} name={name}/>
 	}
 

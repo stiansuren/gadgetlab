@@ -17,9 +17,9 @@ class Retningslinjer extends Component {
 		getRetningslinjer()
 			.then(data => {
 				this.setState({
-					data 
+					data
 				});
-				
+
 			})
 	}
 

@@ -9,7 +9,7 @@ class App extends Component {
 	render(){
 		return(
 			<div>
-				{this.props.children}
+				// {this.props.children}
 			</div>
 		)
 	}
@@ -28,11 +28,11 @@ class Gadgets extends Component {
 		getCards()
 			.then(data => {
 				this.setState({
-					data 
+					data
 				});
 			})
 	}
-	
+
 	render(){
 		return(
 			<div>
@@ -40,7 +40,7 @@ class Gadgets extends Component {
 				<h4>{this.state.data.length} Gadgets</h4>
 					{this.state.data.map(gadget => {
 						return (
-							<Gadget key={gadget.id} gadget={gadget}/> 
+							<Gadget key={gadget.id} gadget={gadget}/>
 						)
 					})}
 			</div>
