@@ -9,7 +9,7 @@ class App extends Component {
 	render(){
 		return(
 			<div>
-				// {this.props.children}
+				{this.props.children}
 			</div>
 		)
 	}
@@ -36,7 +36,7 @@ class Gadgets extends Component {
 	render(){
 		return(
 			<div>
-				<Link to="/retningslinjer" className='btn space'><h2>Sjå retningslinjene</h2></Link>
+				<Link to="/retningslinjer" className='btn space'><h2>Se retningslinjene</h2></Link>
 				<h4>{this.state.data.length} Gadgets</h4>
 					{this.state.data.map(gadget => {
 						return (
