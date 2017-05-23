@@ -3,7 +3,7 @@ import {render} from 'react-dom';
 import {getCards} from './helpers';
 import Gadget from './components/Gadget.jsx';
 import Retningslinjer from './components/Retningslinjer.jsx';
-import { Router, Route, Link, IndexRoute, hashHistory } from 'react-router';
+import {Router, Route, Link, IndexRoute, hashHistory} from 'react-router';
 
 class App extends Component {
 	render(){
@@ -46,7 +46,6 @@ class Gadgets extends Component {
 			</div>
 		)
 	}
-
 }
 
 
