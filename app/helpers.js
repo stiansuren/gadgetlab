@@ -41,3 +41,12 @@ export function getRetningslinjer(){
 	})
 }
 
+export function getEmail(){
+	return fetch('/getEmail')
+	.then(data => {
+		return data.json();
+	})
+	.then(jsonData => {
+		return jsonData;
+	})
+}

@@ -92,7 +92,7 @@ app.post('/postName/:id', function(req, res) {
 			res.json(_res.body);
 			console.log('Response is ' + _res.body);
    		});
-   	
+
 });
 
 app.get('/getRetningslinjer', function(req,res){
@@ -109,9 +109,16 @@ app.get('/getRetningslinjer', function(req,res){
 		});
 });
 
+app.get('/getEmail', function(req,res){
 
+	var checkList = trelloBaseURL + '/1/checklists/' + 	'58970926b504e80b5d4201f6' + '/checkItems';
 
-
-
-
-
+	request
+		.get(checkList)
+		.set('Content-Type', 'application/json')
+		.query(trelloHeader)
+		.end(function(_err, _res){
+			res.json(_res.body);
+			console.log('Response is ' + _res.body);
+		});
+});
