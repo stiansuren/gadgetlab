@@ -36,7 +36,7 @@ class Gadgets extends Component {
 	render(){
 		return(
 			<div>
-				<Link to="/retningslinjer" className='btn space'><h2>Sjå retningslinjene</h2></Link>
+				<Link to="/retningslinjer" className='btn space'><h2>Sjekk retningslinjene</h2></Link>
 				<h4>{this.state.data.length} Gadgets</h4>
 					{this.state.data.map(gadget => {
 						return (
